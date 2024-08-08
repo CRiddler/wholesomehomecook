@@ -36,7 +36,7 @@ def build(input_path, site_dir, output_dir, env):
     relpath = input_path.relative_to(site_dir)
     outpath = output_dir / relpath
 
-    if not {'images', 'css'}.isdisjoint(input_path.parts):
+    if not {'images', 'css', '_images'}.isdisjoint(input_path.parts):
         # images in a symlinked folder
         # .css files are symlinked, .scss is rebuild via sass.
         return
