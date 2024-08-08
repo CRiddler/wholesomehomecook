@@ -1,0 +1,6 @@
+jinja2
+livereload
+beautifulsoup4
+lxml
+Pillow
+pillow-heif

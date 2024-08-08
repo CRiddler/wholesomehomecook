@@ -1,0 +1,7 @@
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link{
+  color: var(--whc-nude);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color: var(--whc-forest);
+}

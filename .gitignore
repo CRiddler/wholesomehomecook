@@ -1,0 +1,6 @@
+.python-version
+.sass-cache
+
+node_modules
+_build/
+_images/
