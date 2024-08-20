@@ -70,8 +70,13 @@ def rebuild_all(site_dir, output_dir, env):
         build(path, site_dir, output_dir, env=env)
 
 if __name__ == '__main__':
-    # dont forget to manually link site/images to _build/images
+    from argparse import ArgumentParser
 
+    parser = ArgumentParser()
+    parser.add_argument('--no-watch', action='store_true')
+    args = parser.parse_args()
+
+    # dont forget to manually link site/images to _build/images
     here = Path(__file__).parent
     site_dir, build_dir = here / 'site', here / '_build'
     build_dir.mkdir(exist_ok=True)
@@ -91,6 +96,9 @@ if __name__ == '__main__':
 
     callback = partial(build, site_dir=site_dir, output_dir=build_dir, env=env)
     rebuild_all(site_dir, build_dir, env=env)
+
+    if args.no_watch:
+        exit()
 
     server = Server()
     host, port = '127.0.0.1', 5500
